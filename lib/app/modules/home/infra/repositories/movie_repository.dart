@@ -15,7 +15,8 @@ class MovieRepository implements MovieRepositoryInterface {
   Future<Either<Failure, MovieResponseEntity>> fetchMoviesByGenre(
       {int genre = 28, int page = 1}) async {
     try {
-      var result = await _datasource.fetchMoviesByGenre();
+      var result =
+          await _datasource.fetchMoviesByGenre(genre: genre, page: page);
       return Right(result);
     } on Failure catch (e) {
       return Left(e);

@@ -11,8 +11,7 @@ class MovieGenreRepository implements MovieGenreRepositoryInterface {
       : _datasource = datasource;
 
   @override
-  Future<Either<Failure, List<MovieGenreEntity>>> fetchMovieGenres(
-      {int genre = 28, int page = 1}) async {
+  Future<Either<Failure, List<MovieGenreEntity>>> fetchMovieGenres() async {
     try {
       var result = await _datasource.fetchMovieGenres();
       return Right(result);
