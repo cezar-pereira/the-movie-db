@@ -3,13 +3,11 @@
 import 'package:flutter/material.dart';
 
 class TextFieldSearchFilmComponent extends StatelessWidget {
-  const TextFieldSearchFilmComponent({
-    Key? key,
-    //  required this.controller,
-  }) : super(key: key);
+  const TextFieldSearchFilmComponent({Key? key, required this.value})
+      : super(key: key);
 
   final double height = 47;
-  // final TextEditingController controller;
+  final ValueChanged value;
 
   @override
   Widget build(BuildContext context) {
