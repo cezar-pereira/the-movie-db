@@ -16,5 +16,5 @@ class MovieEntity {
   });
 
   @override
-  String toString() => title;
+  String toString() => '$title - $genreIds - $genres \n';
 }
