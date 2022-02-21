@@ -24,4 +24,18 @@ class MovieModel extends MovieEntity {
       genreIds: List<int>.from(json["genre_ids"].map((x) => x)),
     );
   }
+
+  MovieModel copyWith({List<MovieGenreEntity>? genres}) {
+    return MovieModel(
+        id: id,
+        title: title,
+        genreIds: genreIds,
+        posterPath: posterPath,
+        genres: genres == null
+            ? this.genres
+            : genreIds
+                .map<MovieGenreEntity>(
+                    (e) => genres.firstWhere((element) => element.id == e))
+                .toList());
+  }
 }
