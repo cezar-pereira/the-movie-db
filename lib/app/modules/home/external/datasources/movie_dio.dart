@@ -8,15 +8,15 @@ import 'package:the_movie_db/app/modules/home/infra/models/movie_response_model.
 
 class MovieDio implements MovieDatasourceInterface {
   final Dio _dio = Dio(dioOptions);
-  // final String lang = 'pt-BR';
+  final String lang = 'pt-BR';
   @override
   Future<MovieResponseModel> fetchMoviesByGenre(
       {int genre = 28, int page = 1}) async {
     try {
       //tratativa, pois a API só responde até a page 500
       page > 500 ? 500 : page;
-      var response =
-          await _dio.get('/discover/movie?with_genres=$genre&page=$page');
+      var response = await _dio
+          .get('/discover/movie?language=$lang&with_genres=$genre&page=$page');
       return MovieResponseModel.fromJson(json: response.data);
     } on DioError catch (exception, stackTrace) {
       if (exception.type == DioErrorType.response) {
