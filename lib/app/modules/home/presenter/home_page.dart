@@ -63,18 +63,20 @@ class _HomePageState extends ModularState<HomePage, HomeStore> {
             Expanded(
               child: ScopedBuilder<HomeStore, Failure, List<MovieEntity>>(
                 store: store,
-                onState: (_, counter) {
+                onState: (_, movies) {
                   return NotificationListener<ScrollEndNotification>(
                     child: ListView.separated(
                       physics: BouncingScrollPhysics(),
                       padding: const EdgeInsets.only(top: 24, bottom: 20),
                       shrinkWrap: true,
-                      itemCount: store.listMovies.length,
+                      itemCount: movies.length,
                       itemBuilder: (context, index) {
                         return GestureDetector(
-                          onTap: () {},
-                          child:
-                              PostFilmComponent(movie: store.listMovies[index]),
+                          onTap: () {
+                            Modular.to.pushNamed('/movie-details/',
+                                arguments: movies[index]);
+                          },
+                          child: PostFilmComponent(movie: movies[index]),
                         );
                       },
                       separatorBuilder: (_, __) => SizedBox(height: 16),
