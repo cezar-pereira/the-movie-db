@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:the_movie_db/app/modules/home/domain/errors/movie_failures.dart';
-import 'package:the_movie_db/app/modules/movie_details/infra/datasources/movie_datasource.dart';
+import 'package:the_movie_db/app/modules/movie_details/infra/datasources/movie_details_datasource.dart';
 import 'package:the_movie_db/app/modules/movie_details/infra/models/movie_details_model.dart';
 
 class MovieDetailsDatasourceMock extends Mock
