@@ -3,7 +3,7 @@ import 'package:the_movie_db/app/core/error/failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:the_movie_db/app/modules/movie_details/domain/repositories/movie_details_repository.dart';
 
-import '../datasources/movie_datasource.dart';
+import '../datasources/movie_details_datasource.dart';
 
 class MovieDetailsRepository implements MovieDetailsRepositoryInterface {
   final MovieDetailsDatasourceInterface _datasource;

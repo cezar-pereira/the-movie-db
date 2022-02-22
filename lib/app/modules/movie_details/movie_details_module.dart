@@ -4,7 +4,7 @@ import 'package:the_movie_db/app/modules/movie_details/external/datasources/movi
 import 'package:the_movie_db/app/modules/movie_details/presenter/movie_details_page.dart';
 
 import 'domain/repositories/movie_details_repository.dart';
-import 'infra/datasources/movie_datasource.dart';
+import 'infra/datasources/movie_details_datasource.dart';
 import 'infra/repositories/movie_details_repository.dart';
 import 'presenter/movie_details_store.dart';
 
